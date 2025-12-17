@@ -1,0 +1,36 @@
+<html lang="en">
+    <head>
+    </head>
+    <body>
+        <%- include('../partials/header') %>
+        <main>
+            <form method="POST" action="/edit/<%= task.id %>">
+                <fieldset>
+                    <legend>Edytuj zadanie</legend>
+                    <label for="title">Tytuł:</label>
+                    <input type="text" id="title" name="title" value="<%= task.title %>" required>
+                    <br>
+                    <label for="content">Treść:</label>
+                    <textarea id="content" name="content" required><%= task.content %></textarea>
+                    <br>
+                    <label for="status">Status:</label>
+                    <select id="status" name="status" required>
+                        <option value="Oczekujące" <% if(task.status == "Oczekujące"){%>
+                            selected
+                        <% } %>>Oczekujące</option>
+                        <option value="W trakcie" <% if(task.status == "W trakcie"){%>
+                            selected
+                        <% } %>>W trakcie</option>
+                        <option value="Zakończone" <% if(task.status == "Zakończone"){ %>
+                            selected
+                        <% } %>>Zakończone</option>
+                    </select>
+                    <br>
+                    <button type="submit">Zatwierdź</button>
+                </fieldset>
+            </form>
+        </main>
+
+        <%- include('../partials/footer') %>
+    </body>
+</html>

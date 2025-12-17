@@ -1,0 +1,30 @@
+<html lang="en">
+    <head>
+    </head>
+    <body>
+        <%- include('../partials/header') %>
+        <main>
+            <form method="POST" action="/new">
+                <fieldset>
+                    <legend>Dodaj nowe zadanie</legend>
+                    <label for="title">Tytuł:</label>
+                    <input type="text" id="title" name="title" required>
+                    <br>
+                    <label for="content">Treść:</label>
+                    <textarea id="content" name="content" required></textarea>
+                    <br>
+                    <label for="status">Status:</label>
+                    <select id="status" name="status" required>
+                        <option value="Oczekujące">Oczekujące</option>
+                        <option value="W trakcie">W trakcie</option>
+                        <option value="Zakończone">Zakończone</option>
+                    </select>
+                    <br>
+                    <button type="submit">Dodaj zadanie</button>
+                </fieldset>
+            </form>
+        </main>
+
+        <%- include('../partials/footer') %>
+    </body>
+</html>

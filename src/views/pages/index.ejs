@@ -1,0 +1,23 @@
+<html lang="en">
+<body>
+    <%- include('../partials/header') %>
+    <main>
+        <% if(tasks.length === 0) { %>
+            <p>Brak zadań do wyświetlenia.</p>
+        <% } else { %>
+            <div class="tasks">
+                <% tasks.forEach(task => { %>
+                    <div class="task">
+                        <h2><%= task.title %></h2>
+                        <p><%= task.content %></p>
+                        <p><%= task.status %></p>
+                        <a href="/edit/<%= task.id %>">Edytuj</a>
+                        <a href="/delete/<%= task.id %>">Usuń</a>
+                    </div>
+                <% }) %>
+            </div>
+        <% } %>
+    </main>
+     <%- include('../partials/footer') %>
+</body>
+</html>
